@@ -1,157 +1,46 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
-  "type": "object",
-  "properties": {
-    "site_info": {
-      "type": "object",
-      "properties": {
-        "favicon": {
-          "type": "string",
-          "title": "Favicon"
-        },
-        "logo": {
-          "type": "string",
-          "title": "Logo"
-        },
-        "copyright": {
-          "type": "string",
-          "title": "Copyright"
-        }
-      },
-      "title": "Site Info"
-    },
-    "nav": {
-      "type": "object",
-      "properties": {
-        "header": {
-          "type": "array",
-          "properties": {},
-          "title": "Header",
-          "items": {
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "properties": {
+        "news": {
             "type": "object",
             "properties": {
-              "label": {
-                "type": "string",
-                "title": "Label"
-              },
-              "url": {
-                "type": "string",
-                "title": "Url"
-              }
-            }
-          }
-        },
-        "footer": {
-          "type": "array",
-          "properties": {},
-          "title": "Footer",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {
-                "type": "string",
-                "title": "Label"
-              },
-              "url": {
-                "type": "string",
-                "title": "Url"
-              },
-              "target": {
-                "type": "string",
-                "title": "Target"
-              }
-            }
-          }
-        }
-      },
-      "title": "Nav"
-    },
-    "pages": {
-      "type": "array",
-      "properties": {},
-      "title": "Pages",
-      "items": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "title": "Key"
-          },
-          "heading": {
-            "type": "string",
-            "title": "Heading"
-          },
-          "body": {
-            "type": "string",
-            "title": "Body",
-            "format": "html"
-          },
-          "search_enabled": {
-            "type": "boolean",
-            "title": "Search Enabled"
-          },
-          "tags": {
-            "type": "array",
-            "title": "Tags",
-            "description": "An array of tags",
-            "items": {
-              "type": "string"
-            }
-          },
-          "title": {
-            "type": "string",
-            "title": "Title",
-            "description": "The SEO title of the page, for web crawlers"
-          },
-          "description": {
-            "type": "string",
-            "title": "Description",
-            "format": "textarea",
-            "className": "short",
-            "description": "The SEO description of the page, for web crawlers"
-          }
-        }
-      }
-    },
-    "messages": {
-      "type": "object",
-      "properties": {
-        "errors": {
-          "type": "object",
-          "properties": {},
-          "title": "Errors",
-          "patternProperties": {
-            ".+": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "type": "string",
-                  "title": "Title"
+                "_id": {
+                    "type": "string",
+                    "title": "Peut être un nombre ou une chaîne de caractère. Peut être laissé vide"
                 },
-                "message": {
-                  "type": "string",
-                  "title": "Message"
+                "titre": {
+                    "type": "string",
+                    "title": "Titre de la news"
+                },
+                "description": {
+                    "type": "string",
+                    "title": "Le contenu de la nouvelle"
+                },
+                "droits": {
+                    "type": "array",
+                    "title": "Liste des choix sur les droits, O ou 1"
+                },
+                "auteur": {
+                    "type": "object",
+                    "properties": {
+                        "_id": {
+                            "type": "string",
+                            "title": "Peut être un nombre ou une chaîne de caractère. Peut être laissé vide"
+                        },
+                        "nom": {
+                            "type": "string",
+                            "title": "Nom de l'auteur"
+                        },
+                        "infos": {
+                            "type": "string",
+                            "title": "Des infos sur l'auteur, le cas échéant"
+                        }
+                    }
                 }
-              },
-              "keyTitle": "Identifier"
-            }
-          }
+            },
+            "title": "Nouvelle"
         },
-        "tooltips": {
-          "type": "object",
-          "properties": {},
-          "title": "Tooltips",
-          "patternProperties": {
-            ".+": {
-              "type": "string",
-              "keyTitle": "Identifier",
-              "valueTitle": "Message"
-            }
-          }
-        }
-      },
-      "title": "Messages"
+        "title": "Mon site d'actualités"
     }
-  },
-  "title": "My Web Site"
 }
